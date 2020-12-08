@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<groups>
+		<run>
+			<include name="progression" />
+		</run>
+	</groups>
+
+	<listeners>
+		<listener
+			class-name="com.MyStoreProject.Utilities.ListenersClass"></listener>
+	</listeners>
+
+	<test thread-count="5" name="progression">
+
+		<parameter name="url"
+			value="http://automationpractice.com/index.php" />
+		<parameter name="browser" value="" />
+
+		<classes>
+
+			<class name="MyStoreProject.MyStoreProjectE2E.placeOrder">
+				<methods>
+					<exclude name="placeTheOrder" />
+				</methods>
+			</class>
+
+		</classes>
+
+	</test> <!-- Test -->
+
+
+</suite> <!-- Suite -->
